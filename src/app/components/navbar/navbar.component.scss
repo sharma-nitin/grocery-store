@@ -1,0 +1,121 @@
+.nav-container {
+  height: 80px;
+  box-shadow: 0 4px 6px -3px lightgray;
+}
+
+.navbar {
+  height: 80px;
+  width: 80%;
+  display: flex;
+  margin: auto;
+}
+
+.menu-items {
+  flex: 1 0 auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: gray;
+  cursor: pointer;
+  li:first-child {
+    padding: 0px 0px 20px 100px;
+    outline: none;
+  }
+  li {
+    padding: 0px 0px 20px 20px;
+    outline: none;
+  }
+}
+
+.active{
+  color: #ba3d50;
+}
+
+picture img {
+  height: 60px;
+  margin: 10px 0px;
+}
+
+button img {
+  height: 20px;
+}
+
+section span {
+  padding-left: 10px;
+}
+
+.cart {
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 140px;
+  font-size: 14px;
+  font-weight: 600;
+  color: gray;
+}
+
+.sign-up span {
+  outline: none;
+  cursor: pointer;
+}
+
+// Media query to target mobile phone and small screen mobiles
+@media only screen and (max-width: 468px) {
+  .navbar {
+    width: 100%;
+    justify-content: space-between;
+  }
+  picture img {
+    height: 60px;
+    margin: 10px 5px;
+  }
+
+  .menu-items {
+    display: none;
+  }
+
+  .navbar,
+  .nav-container {
+    height: 40px;
+  }
+
+  picture img {
+    height: 30px;
+    margin: 5px;
+  }
+
+  .sign-up {
+    display: none;
+  }
+}
+
+// Media query to target tablets
+@media only screen and (max-width: 768px) and (min-width: 468px) {
+  .navbar {
+    width: 100%;
+  }
+
+  .menu-items {
+    flex: 1 0 auto;
+    li:first-child {
+      padding: 0px 0px 20px 50px;
+    }
+    li {
+      padding: 0px 0px 20px 20px;
+    }
+  }
+}

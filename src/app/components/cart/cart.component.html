@@ -1,0 +1,32 @@
+<div class="cart-container">
+
+<header *ngIf="itemInCart > 0">
+  <p><b>My Cart</b> ({{ itemInCart + " item" }})</p>
+</header>
+
+<body *ngIf="itemInCart > 0">
+  <ul>
+    <li>Apple</li>
+  </ul>
+
+  <aside class="promotion">
+    <img src="../../../assets/images/lowest-price.png" alt="lowest price guaranteed" />
+    <p>You wont find it cheaper anywhere</p>
+  </aside>
+</body>
+
+<div class="emptycart"  *ngIf="itemInCart === 0">
+  <section>
+    <h3>No Items in your cart</h3>
+    <p>Your favourite items are just a click away</p>
+  </section>
+</div>
+
+<footer>
+  <h5 *ngIf="itemInCart > 0">Promo code can be applied on payment page</h5>
+  <button routerLink='/home' *ngIf="itemInCart === 0">Start Shopping</button>
+  <button routerLink='/home' *ngIf="itemInCart > 0">Proceed to Checkout</button>
+
+</footer>
+
+</div>

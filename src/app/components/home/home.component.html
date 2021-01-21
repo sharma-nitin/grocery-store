@@ -1,0 +1,13 @@
+<div class="home-container">
+
+<ng-container *ngFor="let item of Categories">
+  <section class="category" *ngIf="item.enabled">
+      <img [src]="item.imageUrl" alt="item.key">
+      <div class="category-description">
+          <h4>{{item.name}}</h4>
+          <p>{{item.description}}</p>
+          <button>{{'Explore ' + item.key}}</button>
+      </div>
+  </section>
+</ng-container>
+</div>

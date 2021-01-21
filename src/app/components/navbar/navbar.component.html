@@ -1,0 +1,25 @@
+<div class="nav-container">
+  <nav class="navbar">
+    <picture class="nav-logo">
+      <source media="(max-width:468px)" srcset="./../../../assets/images/logo.png">
+      <source media="(min-width:468px)" srcset="./../../../assets/images/logo_2x.png">
+      <img  src="./../../../assets/images/logo_2x.png" alt="application logo sabka bazaar">
+    </picture>
+
+    <ul class="menu-items">
+      <li routerLink='home' routerLinkActive='active' title="Homepage">Home</li>
+      <li routerLink='products' routerLinkActive='active' title="products">Products</li>
+    </ul>
+
+    <div class="nav-right">
+       <section class="sign-up">
+         <span routerLink='login' routerLinkActive='active'> SignIn</span>
+         <span routerLink='signup' routerLinkActive='active'> Register</span>
+       </section>
+       <button class="cart" routerLink='cart'>
+           <img src="../../../assets/images/cart.svg">
+           <span>0 items</span>
+       </button>
+    </div>
+  </nav>
+</div>
