@@ -14,7 +14,7 @@ export class AppComponent implements OnInit,AfterContentChecked {
 
   }
   ngOnInit() {
-    this.Productservice.showFooter$.subscribe((status:boolean)=>{
+    this.Productservice.showFooter$.subscribe((status:any)=>{
       this.showFooter = status;
    })
  }

@@ -6,9 +6,10 @@
   </section>
 
   <section class="category-dropdown">
-    <select class="dropdown_select" name="dropdown" >
+    <select class="dropdown_select" name="dropdown" [(ngModel)]="selectedCategorykey" (change)="selected()" >
+      <option value="" selected disabled hidden>Select a category</option>
       <ng-container *ngFor="let item of Categories">
-        <option *ngIf="item.enabled"  [selected]='selectedoption' value="item.key">{{item.name}}</option>
+        <option *ngIf="item.enabled"  [selected]='selectedCategorykey===item.key' [value]="item.key">{{item.name}}</option>
       </ng-container>
      </select>
   </section>
@@ -22,9 +23,9 @@
       </div>
       <div class="split-btn">
         <p>{{"MRP RS." +item.price }}</p>
-        <button>{{ "Buy Now" }}</button>
+        <button (click)="addtoCart(item)">{{ "Buy Now" }}</button>
       </div>
-      <button class="full-btn">{{ "Buy Now @ Rs." + item.price }}</button>
+      <button class="full-btn" (click)="addtoCart(item)">{{ "Buy Now @ Rs." + item.price }}</button>
     </div>
   </section>
 </div>

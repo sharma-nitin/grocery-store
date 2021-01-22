@@ -6,7 +6,7 @@
       <div class="category-description">
           <h4>{{item.name}}</h4>
           <p>{{item.description}}</p>
-          <button routerLink='/products'>{{'Explore ' + item.key}}</button>
+          <button [routerLink]="['/products',item.key ]">{{'Explore ' + item.key}}</button>
       </div>
   </section>
 </ng-container>

@@ -1,21 +1,37 @@
 <div class="cart-container">
 
-<header *ngIf="itemInCart > 0">
-  <p><b>My Cart</b> ({{ itemInCart + " item" }})</p>
+<header *ngIf="itemsInCart.length > 0">
+  <p><b>My Cart</b> ({{ itemsInCart.length + " item" }})</p>
 </header>
 
-<body *ngIf="itemInCart > 0">
+<body *ngIf="itemsInCart.length > 0">
   <ul>
-    <li>Apple</li>
+    <li *ngFor="let item of itemsInCart">
+      <img [src]="item.imageURL" alt="">
+      <section>
+        <p>{{item.name}}</p>
+        <section>
+          <button class="counter-button"  (click)="Productservice.removedfromcart(item)" >-</button>
+          <span>{{item.quantity}}</span>
+          <button class="counter-button" (click)="Productservice.addedtocart(item)">+</button>
+          <span>x</span>
+          <span>{{'Rs.'+ item.price}}</span>
+        </section>
+      </section>
+        <section class="itemprice">
+          <span>{{'Rs.' + item.price * item.quantity}}</span>
+        </section>
+
+    </li>
   </ul>
 
   <aside class="promotion">
-    <img src="../../../assets/images/lowest-price.png" alt="lowest price guaranteed" />
+    <img src="../../../assets/images/lowest-price.png" alt="item.name" />
     <p>You wont find it cheaper anywhere</p>
   </aside>
 </body>
 
-<div class="emptycart"  *ngIf="itemInCart === 0">
+<div class="emptycart"  *ngIf="itemsInCart.length === 0">
   <section>
     <h3>No Items in your cart</h3>
     <p>Your favourite items are just a click away</p>
@@ -23,9 +39,9 @@
 </div>
 
 <footer>
-  <h5 *ngIf="itemInCart > 0">Promo code can be applied on payment page</h5>
-  <button routerLink='/home' *ngIf="itemInCart === 0">Start Shopping</button>
-  <button routerLink='/home' *ngIf="itemInCart > 0">Proceed to Checkout</button>
+  <h5 *ngIf="itemsInCart.length > 0">Promo code can be applied on payment page</h5>
+  <button class="proceed-btn" routerLink='/home' *ngIf="itemsInCart.length === 0">Start Shopping</button>
+  <button  class="proceed-btn" routerLink='/home' *ngIf="itemsInCart.length > 0">Proceed to Checkout</button>
 </footer>
 
 </div>

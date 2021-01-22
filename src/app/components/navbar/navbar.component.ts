@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  cartCount = localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')).length : 0;
+  constructor(private Productservice:ProductService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.Productservice.cartProducts$.subscribe((res:any)=>{
+      this.cartCount = res.length;
+    })
   }
 
 }

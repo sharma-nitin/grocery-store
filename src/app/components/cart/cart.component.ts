@@ -7,15 +7,19 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  itemInCart = 1;
-  constructor(private Productservice:ProductService) { }
+  itemsInCart = localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [];
+  constructor(public Productservice:ProductService) { }
 
   ngOnInit() {
     this.Productservice.setFooterStatus(false);
+    this.Productservice.cartProducts$.subscribe((res:any)=>{
+      this.itemsInCart = res;
+    })
   }
 
   ngOnDestroy(){
     this.Productservice.setFooterStatus(true);
   }
+
 
 }
