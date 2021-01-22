@@ -9,7 +9,7 @@
     <li *ngFor="let item of itemsInCart">
       <img [src]="item.imageURL" alt="">
       <section>
-        <p>{{item.name}}</p>
+        <p class="product-name">{{item.name}}</p>
         <section>
           <button class="counter-button"  (click)="Productservice.removedfromcart(item)" >-</button>
           <span>{{item.quantity}}</span>
@@ -41,7 +41,10 @@
 <footer>
   <h5 *ngIf="itemsInCart.length > 0">Promo code can be applied on payment page</h5>
   <button class="proceed-btn" routerLink='/home' *ngIf="itemsInCart.length === 0">Start Shopping</button>
-  <button  class="proceed-btn" routerLink='/home' *ngIf="itemsInCart.length > 0">Proceed to Checkout</button>
+  <button  class="proceed-btn checkout" routerLink='/home' *ngIf="itemsInCart.length > 0">
+   <span>Proceed to Checkout</span>
+   <span>{{"Rs."+ cartValue + ' >'}}</span>
+  </button>
 </footer>
 
 </div>
