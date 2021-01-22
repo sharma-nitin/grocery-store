@@ -1,27 +1,99 @@
 <div class="signup-container">
   <section class="signup-item">
-       <h3>Signup</h3>
-       <p>We do not share your personal details with anyone.</p>
+    <h3>Signup</h3>
+    <p>We do not share your personal details with anyone.</p>
   </section>
 
   <section class="signup-form">
-      <form>
-         <label for="firstname" class="firstname">First Name</label>
-         <input type="text" id="firstname" >
+    <form
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      [mustMatch]="['password', 'confirmPassword']"
+      novalidate
+    >
+      <label for="firstName" class="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="model.firstName"
+        #firstName="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }"
+        required
+      />
+      <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+        <div *ngIf="firstName.errors.required">First Name is required</div>
+      </div>
 
-         <label for="lastname" class="lastname">Last Name</label>
-         <input type="text" id="lastname" >
+      <label for="lastName" class="lastName">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="model.lastName"
+        #lastName="ngModel"
+      />
 
-         <label for="email" class="email">Email</label>
-         <input type="email" id="email" >
+      <label for="email" class="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="model.email"
+        #email="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+        required
+        email
+      />
+      <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+        <div *ngIf="email.errors.required">Email is required</div>
+        <div *ngIf="email.errors.email">
+          Invalid Email
+        </div>
+      </div>
 
-         <label for="password" class="password">Password</label>
-         <input type="password" id="password" >
+      <label for="password" class="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="model.password"
+        #password="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+        required
+        minlength="6"
+      />
+      <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">
+          Password must be at least 6 characters
+        </div>
+      </div>
 
-         <label for="confirmpassword" class="confirmpassword">Confirm Password</label>
-         <input type="password" id="confirmpassword" >
+      <label for="confirmPassword" class="confirmPassword"
+        >Confirm Password</label
+      >
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        [(ngModel)]="model.confirmPassword"
+        #confirmPassword="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.invalid }"
+        required
+      />
+      <div
+        *ngIf="f.submitted && confirmPassword.invalid"
+        class="invalid-feedback"
+      >
+        <div *ngIf="confirmPassword.errors.required">
+          Confirm Password is required
+        </div>
+        <div *ngIf="confirmPassword.errors.mustMatch">Confirm password and password must match</div>
+      </div>
 
-         <button type="submit" aria-label="Signup button">Signup</button>
-      </form>
+      <button type="submit" aria-label="Signup button">Signup</button>
+    </form>
   </section>
 </div>

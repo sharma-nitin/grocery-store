@@ -10,6 +10,9 @@ import { CartComponent } from './components/cart/cart.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SortByCategoryPipe } from './pipes/sort-by-category.pipe';
+import { FormsModule } from '@angular/forms';
+import { MustMatchDirective } from './directives/must-match.directive';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsComponent,
     CartComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SortByCategoryPipe,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

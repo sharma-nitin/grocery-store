@@ -10,6 +10,7 @@ export class ProductsComponent implements OnInit {
   Categories = [];
   products=[];
   selectedoption='';
+  selectedCategoryId = '';
   constructor(private productservice:ProductService) { }
 
   ngOnInit() {
@@ -22,6 +23,11 @@ export class ProductsComponent implements OnInit {
     this.productservice.fetchProducts().subscribe((res: any) => {
       this.products = res;
     });
+  }
+
+  categorySelection(category){
+    this.selectedCategoryId === category.id ? this.selectedCategoryId = '' : this.selectedCategoryId = category.id;
+
   }
 
 }

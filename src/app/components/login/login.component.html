@@ -1,18 +1,46 @@
 <div class="login-container">
-       <section class="login-item">
-            <h3>Login</h3>
-            <p>Get access to your Order, Wishlist and Recommendations</p>
-       </section>
+  <section class="login-item">
+    <h3>Login</h3>
+    <p>Get access to your Order, Wishlist and Recommendations</p>
+  </section>
 
-       <section class="login-form">
-           <form>
-              <label for="email" class="email">Email</label>
-              <input type="email" id="email" >
+  <section class="login-form">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+      <label for="email" class="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="model.email"
+        #email="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+        required
+        email
+      />
+      <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+        <div *ngIf="email.errors.required">Email is required</div>
+        <div *ngIf="email.errors.email">Invalid Email</div>
+      </div>
 
-              <label for="password" class="password">Password</label>
-              <input type="password" id="password" >
+      <label for="password" class="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="model.password"
+        #password="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+        required
+        minlength="6"
+      />
+      <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">
+          Password must be at least 6 characters
+        </div>
+      </div>
 
-              <button type="submit" aria-label="login button">Login</button>
-           </form>
-       </section>
-   </div>
+      <button type="submit" aria-label="login button">Login</button>
+    </form>
+  </section>
+</div>

@@ -27,26 +27,21 @@ section {
 
 .email,
 .password,
-.firstname,
-.lastname,
-.confirmpassword {
+.firstName,
+.lastName,
+.confirmPassword {
   display: block;
   font-size: 14px;
   font-weight: 600;
   color: gray;
-  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
-#email,
-#password,
-#firstname,
-#lastname,
-#confirmpassword {
+input {
   width: 60%;
   border: none;
   outline: none;
   border-bottom: 2px solid lightgray;
-  margin-bottom: 10px;
 }
 
 button[type="submit"] {
@@ -56,6 +51,17 @@ button[type="submit"] {
   background-color: #ba3d50;
   border: none;
   color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.invalid-feedback{
+  font-size: 12px;
+  color: red;
+}
+
+.is-invalid{
+  border-bottom: 1px solid red;
 }
 
 // Media query to target mobile phone and small screen mobiles
@@ -78,11 +84,7 @@ button[type="submit"] {
     margin: auto;
   }
 
-  #email,
-  #password,
-  #firstname,
-  #lastname,
-  #confirmpassword  {
+ input  {
     width: 100%;
   }
 

@@ -1,7 +1,7 @@
 <div class="products-container">
   <section class="categories-listing">
     <ul *ngFor="let item of Categories">
-      <li *ngIf="item.enabled">{{ item.name }}</li>
+      <li *ngIf="item.enabled" (click)="categorySelection(item)" [ngClass]="{active: item.id ===selectedCategoryId}">{{ item.name }}</li>
     </ul>
   </section>
 
@@ -14,7 +14,7 @@
   </section>
 
   <section class="products-listing">
-    <div class="product-item"  *ngFor="let item of products">
+    <div class="product-item"  *ngFor="let item of products | sortByCategory:selectedCategoryId ">
       <h3 class="item-name">{{ item.name }}</h3>
       <div class="product-desc">
          <img [src]="item.imageURL" alt="item.name">
