@@ -1,13 +1,31 @@
 <div class="home-container">
-
-<ng-container *ngFor="let item of Categories">
-  <section class="category" *ngIf="item.enabled">
-      <img [src]="item.imageUrl" alt="item.key">
-      <div class="category-description">
-          <h4>{{item.name}}</h4>
-          <p>{{item.description}}</p>
-          <button [routerLink]="['/products',item.key ]">{{'Explore ' + item.key}}</button>
+  <section class="carousel">
+    <div class="slideshow-container">
+      <div class="mySlides fade" *ngFor="let item of bannersData">
+        <img [src]="item.bannerImageUrl" alt="item.bannerImageAlt" />
       </div>
+      <a class="prev" (click)="changeSlide(-1)">prev</a>
+      <a class="next" (click)="changeSlide(1)">next</a>
+    </div>
+    <div style="text-align: center">
+      <span
+        *ngFor="let item of bannersData; let i = index"
+        class="dot"
+        (click)="currentSlide(i + 1)"
+      ></span>
+    </div>
   </section>
-</ng-container>
+
+  <ng-container *ngFor="let item of Categories">
+    <section class="category" *ngIf="item.enabled">
+      <img [src]="item.imageUrl" alt="item.key" />
+      <div class="category-description">
+        <h4>{{ item.name }}</h4>
+        <p>{{ item.description }}</p>
+        <button [routerLink]="['/products', item.key]">
+          {{ "Explore " + item.name }}
+        </button>
+      </div>
+    </section>
+  </ng-container>
 </div>
