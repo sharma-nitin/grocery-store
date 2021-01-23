@@ -1,4 +1,10 @@
-import { AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -6,10 +12,11 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit,AfterViewChecked {
+export class HomeComponent implements OnInit, AfterViewChecked, OnDestroy {
   bannersData = [];
   Categories = [];
   slideIndex = 1;
+  timer;
   constructor(private productservice: ProductService) {}
 
   ngAfterViewChecked() {
@@ -27,11 +34,17 @@ export class HomeComponent implements OnInit,AfterViewChecked {
         a.order > b.order ? 1 : b.order > a.order ? -1 : 0
       );
     });
+
+    this.timer = setInterval(() => {
+      this.changeSlide(1);
+    }, 5000);
   }
 
   showSlides(slideIndex) {
     var i;
-    var slides = document.getElementsByClassName('mySlides') as HTMLCollectionOf<HTMLElement>;
+    var slides = document.getElementsByClassName(
+      'mySlides'
+    ) as HTMLCollectionOf<HTMLElement>;
     var dots = document.getElementsByClassName('dot');
     if (slideIndex > slides.length) {
       this.slideIndex = 1;
@@ -59,5 +72,7 @@ export class HomeComponent implements OnInit,AfterViewChecked {
     this.showSlides(this.slideIndex);
   }
 
-
+  ngOnDestroy() {
+    clearInterval(this.timer);
+  }
 }
