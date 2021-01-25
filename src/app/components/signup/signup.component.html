@@ -1,9 +1,11 @@
 <div class="signup-container">
+  <!-- signup form header -->
   <section class="signup-item">
     <h3>Signup</h3>
     <p>We do not share your personal details with anyone.</p>
   </section>
 
+  <!-- signup form -->
   <section class="signup-form">
     <form
       name="form"
@@ -48,9 +50,7 @@
       />
       <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
         <div *ngIf="email.errors.required">Email is required</div>
-        <div *ngIf="email.errors.email">
-          Invalid Email
-        </div>
+        <div *ngIf="email.errors.email">Invalid Email</div>
       </div>
 
       <label for="password" class="password">Password</label>
@@ -90,7 +90,9 @@
         <div *ngIf="confirmPassword.errors.required">
           Confirm Password is required
         </div>
-        <div *ngIf="confirmPassword.errors.mustMatch">Confirm password and password must match</div>
+        <div *ngIf="confirmPassword.errors.mustMatch">
+          Confirm password and password must match
+        </div>
       </div>
 
       <button type="submit" aria-label="Signup button">Signup</button>

@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit, AfterViewChecked, OnDestroy {
   timer;
   constructor(private productservice: ProductService) {}
 
+  // To trigger carousel once view is checked
   ngAfterViewChecked() {
     this.showSlides(this.slideIndex);
   }
@@ -40,6 +41,7 @@ export class HomeComponent implements OnInit, AfterViewChecked, OnDestroy {
     }, 5000);
   }
 
+  //showSlides method to display currently selected slide at passed index.
   showSlides(slideIndex) {
     var i;
     var slides = document.getElementsByClassName(
@@ -62,12 +64,14 @@ export class HomeComponent implements OnInit, AfterViewChecked, OnDestroy {
     dots[this.slideIndex - 1].className += ' active';
   }
 
+  //changeSlide method to display slide at passed index.
   changeSlide(number) {
     this.slideIndex = this.slideIndex + number;
     this.showSlides(this.slideIndex);
   }
 
-  currentSlide(number) {
+  //slideatDot method to display slide at clicked dot .
+  slideatDot(number) {
     this.slideIndex = number;
     this.showSlides(this.slideIndex);
   }

@@ -1,50 +1,73 @@
 <div class="cart-container">
+  <!-- Header implementation of cart -->
+  <header *ngIf="itemsInCart.length > 0">
+    <p><b>My Cart</b> ({{ itemsInCart.length + " item" }})</p>
+  </header>
 
-<header *ngIf="itemsInCart.length > 0">
-  <p><b>My Cart</b> ({{ itemsInCart.length + " item" }})</p>
-</header>
-
-<body *ngIf="itemsInCart.length > 0">
-  <ul>
-    <li *ngFor="let item of itemsInCart">
-      <img [src]="item.imageURL" alt="">
-      <section>
-        <p class="product-name">{{item.name}}</p>
+  <!-- Body of cart with cart items -->
+  <body *ngIf="itemsInCart.length > 0">
+    <ul>
+      <li *ngFor="let item of itemsInCart">
+        <img [src]="item.imageURL" alt="" />
         <section>
-          <button class="counter-button"  (click)="Productservice.removedfromcart(item)" >-</button>
-          <span>{{item.quantity}}</span>
-          <button class="counter-button" (click)="Productservice.addedtocart(item)">+</button>
-          <span>x</span>
-          <span>{{'Rs.'+ item.price}}</span>
+          <p class="product-name">{{ item.name }}</p>
+          <section>
+            <button
+              class="counter-button"
+              (click)="Productservice.removedfromcart(item)"
+            >
+              -
+            </button>
+            <span>{{ item.quantity }}</span>
+            <button
+              class="counter-button"
+              (click)="Productservice.addedtocart(item)"
+            >
+              +
+            </button>
+            <span>x</span>
+            <span>{{ "Rs." + item.price }}</span>
+          </section>
         </section>
-      </section>
         <section class="itemprice">
-          <span>{{'Rs.' + item.price * item.quantity}}</span>
+          <span>{{ "Rs." + item.price * item.quantity }}</span>
         </section>
+      </li>
+    </ul>
+    <!-- promotional Banner below cart items -->
+    <aside class="promotion">
+      <img src="../../../assets/images/lowest-price.png" alt="item.name" />
+      <p>You wont find it cheaper anywhere</p>
+    </aside>
+  </body>
 
-    </li>
-  </ul>
+  <!-- Body of cart without cart items -->
+  <div class="emptycart" *ngIf="itemsInCart.length === 0">
+    <section>
+      <h3>No Items in your cart</h3>
+      <p>Your favourite items are just a click away</p>
+    </section>
+  </div>
 
-  <aside class="promotion">
-    <img src="../../../assets/images/lowest-price.png" alt="item.name" />
-    <p>You wont find it cheaper anywhere</p>
-  </aside>
-</body>
-
-<div class="emptycart"  *ngIf="itemsInCart.length === 0">
-  <section>
-    <h3>No Items in your cart</h3>
-    <p>Your favourite items are just a click away</p>
-  </section>
-</div>
-
-<footer>
-  <h5 *ngIf="itemsInCart.length > 0">Promo code can be applied on payment page</h5>
-  <button class="proceed-btn" routerLink='/home' *ngIf="itemsInCart.length === 0">Start Shopping</button>
-  <button  class="proceed-btn checkout" routerLink='/home' *ngIf="itemsInCart.length > 0">
-   <span>Proceed to Checkout</span>
-   <span>{{"Rs."+ cartValue + ' >'}}</span>
-  </button>
-</footer>
-
+  <!-- Footer implementation of cart -->
+  <footer>
+    <h5 *ngIf="itemsInCart.length > 0">
+      Promo code can be applied on payment page
+    </h5>
+    <button
+      class="proceed-btn"
+      routerLink="/home"
+      *ngIf="itemsInCart.length === 0"
+    >
+      Start Shopping
+    </button>
+    <button
+      class="proceed-btn checkout"
+      routerLink="/home"
+      *ngIf="itemsInCart.length > 0"
+    >
+      <span>Proceed to Checkout</span>
+      <span>{{ "Rs." + cartValue + " >" }}</span>
+    </button>
+  </footer>
 </div>

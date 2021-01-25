@@ -1,4 +1,5 @@
 <div class="home-container">
+  <!-- Carousel -->
   <section class="carousel">
     <div class="slideshow-container">
       <div class="mySlides fade" *ngFor="let item of bannersData">
@@ -11,11 +12,12 @@
       <span
         *ngFor="let item of bannersData; let i = index"
         class="dot"
-        (click)="currentSlide(i + 1)"
+        (click)="slideatDot(i + 1)"
       ></span>
     </div>
   </section>
 
+  <!-- Categories Listing -->
   <ng-container *ngFor="let item of Categories">
     <section class="category" *ngIf="item.enabled">
       <img [src]="item.imageUrl" alt="item.key" />
