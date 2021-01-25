@@ -20,6 +20,17 @@
            <img src="../../../assets/images/cart.svg">
            <span>{{cartCount}} items</span>
        </button>
+
+       <button class="hamburger" (click)="showMobileMenu()">
+        <i class="fa fa-bars" id="bar"></i>
+       </button>
     </div>
   </nav>
 </div>
+
+<ul id="hamburger-links" (click)="showMobileMenu()">
+  <li routerLink='/home'>Home</li>
+  <li  routerLink='/products'>Products</li>
+  <li  routerLink='/login'>Signin</li>
+  <li  routerLink='/signup'>Register</li>
+</ul>

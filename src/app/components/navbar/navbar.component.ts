@@ -16,4 +16,17 @@ export class NavbarComponent implements OnInit {
     })
   }
 
+  showMobileMenu(){
+    var links = document.getElementById("hamburger-links");
+    var bar = document.getElementById("bar");
+    if (links.style.display === "block") {
+      links.style.display = "none";
+      bar.classList.remove('toggle')
+    } else {
+      links.style.display = "block";
+      bar.classList.add('toggle')
+
+    }
+  }
+
 }
