@@ -1,56 +1,62 @@
 <div class="cart-container">
-  <!-- Header implementation of cart -->
-  <header *ngIf="itemsInCart.length > 0">
-    <p><b>My Cart</b> ({{ itemsInCart.length + " item" }})</p>
-  </header>
+  <!-- Heading of cart -->
+  <h1 *ngIf="itemsInCart.length > 0">
+    My Cart
+    <small>({{ itemsInCart.length + " item" }})</small>
+  </h1>
 
-  <!-- Body of cart with cart items -->
-  <body *ngIf="itemsInCart.length > 0">
+  <!--cart body with cart items -->
+  <section *ngIf="itemsInCart.length > 0">
     <ul>
       <li *ngFor="let item of itemsInCart">
-        <img [src]="item.imageURL" alt="" />
-        <section>
-          <p class="product-name">{{ item.name }}</p>
-          <section>
-            <button
-              class="counter-button"
-              (click)="Productservice.removedfromcart(item)"
-            >
-              -
-            </button>
-            <span>{{ item.quantity }}</span>
-            <button
-              class="counter-button"
-              (click)="Productservice.addedtocart(item)"
-            >
-              +
-            </button>
-            <span>x</span>
-            <span>{{ "Rs." + item.price }}</span>
+        <a>
+          <img [src]="item.imageURL" [alt]="item.name" />
+          <article>
+            <p class="product-name">{{ item.name }}</p>
+            <section>
+              <button
+                class="counter-button"
+                (click)="Productservice.removedfromcart(item)"
+                attr.aria-label="Remove 1 quantity out of {{item.quantity}} of {{item.name}}"
+              >
+                -
+              </button>
+              <span>{{ item.quantity }}</span>
+              <button
+                class="counter-button"
+                (click)="Productservice.addedtocart(item)"
+                attr.aria-label="Add 1 more {{item.name}}"
+              >
+                +
+              </button>
+              <span>x</span>
+              <span>{{ "Rs." + item.price }}</span>
+            </section>
+          </article>
+          <section class="itemprice">
+            <span>{{ "Rs." + item.price * item.quantity }}</span>
           </section>
-        </section>
-        <section class="itemprice">
-          <span>{{ "Rs." + item.price * item.quantity }}</span>
-        </section>
+        </a>
       </li>
     </ul>
     <!-- promotional Banner below cart items -->
     <aside class="promotion">
-      <img src="../../../assets/images/lowest-price.png" alt="item.name" />
+      <img
+        src="../../../assets/images/lowest-price.png"
+        alt="Banner displaying, You wont find it cheaper anywhere"
+      />
       <p>You wont find it cheaper anywhere</p>
     </aside>
-  </body>
+  </section>
 
   <!-- Body of cart without cart items -->
-  <div class="emptycart" *ngIf="itemsInCart.length === 0">
-    <section>
-      <h3>No Items in your cart</h3>
-      <p>Your favourite items are just a click away</p>
-    </section>
-  </div>
+  <section class="emptycart" *ngIf="itemsInCart.length === 0">
+    <h3>No Items in your cart</h3>
+    <p>Your favourite items are just a click away</p>
+  </section>
 
   <!-- Footer implementation of cart -->
-  <footer>
+  <section class="footer">
     <h5 *ngIf="itemsInCart.length > 0">
       Promo code can be applied on payment page
     </h5>
@@ -58,16 +64,19 @@
       class="proceed-btn"
       routerLink="/home"
       *ngIf="itemsInCart.length === 0"
+      aria-label="cart is empty now. Click to start shopping"
     >
       Start Shopping
     </button>
+
     <button
       class="proceed-btn checkout"
       routerLink="/home"
       *ngIf="itemsInCart.length > 0"
+      attr.aria-label="Proceed to Checkout. cart total is {{ cartValue }}"
     >
       <span>Proceed to Checkout</span>
       <span>{{ "Rs." + cartValue + " >" }}</span>
     </button>
-  </footer>
+  </section>
 </div>

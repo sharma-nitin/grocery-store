@@ -1,13 +1,13 @@
 <div class="login-container">
   <!-- login header  -->
   <section class="login-item">
-    <h3>Login</h3>
+    <h1>Login</h1>
     <p>Get access to your Order, Wishlist and Recommendations</p>
   </section>
 
   <!-- login form  -->
   <section class="login-form">
-    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" method="post" action='#'>
       <label for="email" class="email">Email</label>
       <input
         type="email"
@@ -18,10 +18,11 @@
         [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
         required
         email
+        aria-describedby='required invalid'
       />
       <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-        <div *ngIf="email.errors.required">Email is required</div>
-        <div *ngIf="email.errors.email">Invalid Email</div>
+        <div *ngIf="email.errors.required" id="required">Email is required</div>
+        <div *ngIf="email.errors.email" id="invalid">Invalid Email</div>
       </div>
 
       <label for="password" class="password">Password</label>
@@ -34,11 +35,12 @@
         [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
         required
         minlength="6"
+        aria-describedby='password_required password_minlength'
       />
       <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
-        <div *ngIf="password.errors.required">Password is required</div>
-        <div *ngIf="password.errors.minlength">
-          Password must be at least 6 characters
+        <div *ngIf="password.errors.required" id="password_required">Password is required</div>
+        <div *ngIf="password.errors.minlength" id="password_minlength">
+          Password must be at least 6 characters in length
         </div>
       </div>
 

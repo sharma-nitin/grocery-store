@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SortByCategoryPipe } from './pipes/sort-by-category.pipe';
 import { FormsModule } from '@angular/forms';
 import { MustMatchDirective } from './directives/must-match.directive';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,8 +31,10 @@ import { MustMatchDirective } from './directives/must-match.directive';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
+  exports:[NgbModule],
   providers: [],
   bootstrap: [AppComponent]
 })

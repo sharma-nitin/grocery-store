@@ -1,34 +1,81 @@
 <div class="products-container">
   <!-- products category side navbar => tablet and higher views -->
   <aside class="categories-listing">
-    <ul *ngFor="let item of Categories">
-      <li *ngIf="item.enabled" (click)="categorySelection(item)" [ngClass]="{active: item.id ===selectedCategoryId}">{{ item.name }}</li>
+    <ul>
+      <ng-container *ngFor="let item of Categories">
+        <li
+          *ngIf="item.enabled"
+          (click)="categorySelection(item)"
+          [ngClass]="{ active: item.id === selectedCategoryId }"
+        >
+          <a>{{ item.name }}</a>
+        </li>
+      </ng-container>
     </ul>
   </aside>
 
   <!-- products category dropdown => mobile view -->
   <section class="category-dropdown">
-    <select class="dropdown_select" name="dropdown" [(ngModel)]="selectedCategorykey" (change)="selected()" >
-      <option value="" selected disabled hidden>Select a category</option>
+    <select
+      class="dropdown_select"
+      name="dropdown"
+      [(ngModel)]="selectedCategorykey"
+      (change)="selected()"
+    >
+      <option value="" aria-label="select a category" selected disabled hidden>
+        Select a category
+      </option>
       <ng-container *ngFor="let item of Categories">
-        <option *ngIf="item.enabled"  [selected]='selectedCategorykey===item.key' [value]="item.key">{{item.name}}</option>
+        <option
+          *ngIf="item.enabled"
+          [selected]="selectedCategorykey === item.key"
+          [value]="item.key"
+        >
+          {{ item.name }}
+        </option>
       </ng-container>
-     </select>
+    </select>
   </section>
 
   <!-- products listing / grid view of products -->
   <section class="products-listing">
-    <div class="product-item"  *ngFor="let item of products | sortByCategory:selectedCategoryId ">
-      <h3 class="item-name">{{ item.name }}</h3>
+    <article
+      class="product-item"
+      *ngFor="let item of products | sortByCategory: selectedCategoryId"
+    >
+      <h2 class="item-name">{{ item.name }}</h2>
       <div class="product-desc">
-         <img [src]="item.imageURL" alt="item.name">
-         <p class="desc">{{item.description}}</p>
+        <img [src]="item.imageURL" [alt]="item.name" />
+        <section>
+          <p class="desc">{{ item.description }}</p>
+          <button
+          class="buynow-mobile-btn"
+          (click)="addtoCart(item)"
+          attr.aria-label="Buy item {{ item.name }} at {{ item.price }} Rupee"
+        >
+          {{ "Buy Now @ Rs." + item.price }}
+        </button>
+        </section>
       </div>
-      <div class="split-btn">
-        <p>{{"MRP RS." +item.price }}</p>
-        <button (click)="addtoCart(item)">Buy Now</button>
+      <div class="buynow-desktop-btn">
+        <p>{{ "MRP RS." + item.price }}</p>
+        <button
+          (click)="addtoCart(item)"
+          attr.aria-label="Buy item {{ item.name }} at {{ item.price }} Rupee"
+        >
+          Buy Now
+        </button>
       </div>
-      <button class="full-btn" (click)="addtoCart(item)">{{ "Buy Now @ Rs." + item.price }}</button>
-    </div>
+
+      <button
+        class="buynow-tablet-btn"
+        (click)="addtoCart(item)"
+        attr.aria-label="Buy item {{ item.name }} at {{ item.price }} Rupee"
+      >
+        {{ "Buy Now @ Rs." + item.price }}
+      </button>
+
+    </article>
   </section>
+
 </div>

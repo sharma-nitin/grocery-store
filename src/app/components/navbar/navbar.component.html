@@ -1,36 +1,50 @@
-<div class="nav-container">
-  <nav class="navbar">
-    <picture class="nav-logo" routerLink='/home'>
-      <source media="(max-width:468px)" srcset="./../../../assets/images/logo.png">
-      <source media="(min-width:468px)" srcset="./../../../assets/images/logo_2x.png">
-      <img  src="./../../../assets/images/logo_2x.png" alt="application logo sabka bazaar">
-    </picture>
+  <section class="nav-container">
+    <nav class="navbar">
+      <picture class="nav-logo" routerLink="/home">
+        <source
+          media="(max-width:468px)"
+          srcset="./../../../assets/images/logo.png"
+        />
+        <source
+          media="(min-width:468px)"
+          srcset="./../../../assets/images/logo_2x.png"
+        />
+        <img
+          src="./../../../assets/images/logo_2x.png"
+          alt="sabka bazaar logo image"
+        />
+      </picture>
 
-    <ul class="menu-items">
-      <li routerLink='home' routerLinkActive='active' title="Homepage">Home</li>
-      <li routerLink='products' routerLinkActive='active' title="products">Products</li>
-    </ul>
+      <ul class="menu-items">
+        <li routerLink="home" routerLinkActive="active" title="Homepage">Home</li>
+        <li routerLink="products" routerLinkActive="active" title="products">
+          Products
+        </li>
+      </ul>
 
-    <div class="nav-right">
-       <section class="sign-up">
-         <span routerLink='login' routerLinkActive='active'> SignIn</span>
-         <span routerLink='signup' routerLinkActive='active'> Register</span>
-       </section>
-       <button class="cart" routerLink='cart'>
-           <img src="../../../assets/images/cart.svg">
-           <span>{{cartCount}} items</span>
-       </button>
+      <div class="nav-right">
+        <section class="sign-up">
+          <span routerLink="login" routerLinkActive="active"> SignIn</span>
+          <span routerLink="signup" routerLinkActive="active"> Register</span>
+        </section>
+        <button class="cart" routerLink="cart" attr.aria-label="Go to cart containing {{cartCount}} items">
+          <img src="../../../assets/images/cart.svg" alt="Cart image" />
+          <span>{{ cartCount }} items</span>
+        </button>
 
-       <button class="hamburger" (click)="showMobileMenu()">
-        <i class="fa fa-bars" id="bar"></i>
-       </button>
-    </div>
-  </nav>
-</div>
+        <button class="hamburger" (click)="showMobileMenu()" aria-label="Menu icon">
+          <i class="fa fa-bars" id="bar"></i>
+        </button>
+      </div>
+    </nav>
+  </section>
 
-<ul id="hamburger-links" (click)="showMobileMenu()">
-  <li routerLink='/home'>Home</li>
-  <li  routerLink='/products'>Products</li>
-  <li  routerLink='/login'>Signin</li>
-  <li  routerLink='/signup'>Register</li>
-</ul>
+  <ul id="hamburger-links" (click)="showMobileMenu()">
+    <li routerLink="/home">Home</li>
+    <li routerLink="/products">Products</li>
+    <li routerLink="/login">Signin</li>
+    <li routerLink="/signup">Register</li>
+  </ul>
+
+
+

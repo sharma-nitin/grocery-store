@@ -1,28 +1,28 @@
-.products-container{
+.products-container {
   width: 80%;
   margin: 20px auto;
   display: flex;
 }
 
-.categories-listing{
+.categories-listing {
   width: 20%;
   background-color: lightgray;
-  ul{
+  ul {
     list-style: none;
-    li{
-    box-shadow: 0 4px 6px -3px gray;
-    padding: 10px 20px;
-    font-size: 14px;
-    cursor: pointer;
+    li {
+      box-shadow: 0 4px 6px -3px gray;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
     }
   }
 }
 
-.category-dropdown{
+.category-dropdown {
   display: none;
 }
 
-.dropdown_select{
+.dropdown_select {
   width: 100%;
   padding: 8px 0px;
   border: none;
@@ -30,52 +30,64 @@
   color: white;
 }
 
-option{
+option {
   max-width: 50%;
   background-color: white;
   color: black;
 }
-.products-listing{
+.products-listing {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
 }
-.item-name{
-  height: 50px;
+.item-name {
+  min-height: 100px;
   font-size: 16px;
   font-weight: 600;
-  overflow: hidden;
 }
-p{
+
+p {
   font-size: 14px;
 }
 
-.desc{
-  height: 100px;
-  overflow: hidden;
-  background-color: lightgray;
+.product-desc {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  section{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
 }
 
-img{
+.desc {
+  background-color: lightgray;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+img {
   width: 100%;
   height: 200px;
 }
 
-.product-item{
+.product-item {
   width: 25%;
-  height: 400px;
   padding: 10px;
   margin-bottom: 20px;
   box-shadow: 0 4px 6px 1px lightgrey;
+  display: flex;
+  flex-direction: column;
 }
 
-.active{
+.active {
   background-color: #ba3d50;
   color: white;
 }
 button {
   display: block;
-  padding: 2px;
+  padding: 4px;
   background-color: #ba3d50;
   border: none;
   color: white;
@@ -83,117 +95,115 @@ button {
   cursor: pointer;
 }
 
-.split-btn{
+.buynow-desktop-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0px;
 }
 
-.full-btn{
+.buynow-tablet-btn,.buynow-mobile-btn {
   display: none;
   width: 100%;
 }
 
 // Media query to target mobile phone and small screen mobiles
 @media only screen and (max-width: 468px) {
-  .categories-listing{
+  .categories-listing, .buynow-desktop-btn,.buynow-tablet-btn {
     display: none;
   }
 
-  .category-dropdown{
+  .buynow-mobile-btn{
     display: block;
   }
 
-  .products-listing{
+  .category-dropdown {
+    display: block;
+  }
+
+  .products-listing {
     width: 100%;
   }
 
-  .products-container{
+  .products-container {
     width: 100%;
     margin: 20px auto;
     flex-direction: column;
   }
-  .product-item{
+  .product-item {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
 
+  .item-name{
+    min-height: 50px;
+  }
+
   .product-desc{
-    display: flex;
+    flex-direction: row;
+      section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
   }
 
-.desc{
-  width: 50%;
-  height: 200px;
-  overflow: hidden;
-  background-color: lightgray;
-}
-
-img{
-  width: 50%;
-  height: 200px;
-}
-
-  .split-btn{
-    display: none;
+  .desc {
+    background-color: lightgray;
+    flex-grow: 0;
   }
 
-  .full-btn{
-   display: block;
+  img {
+    width: 50%;
   }
 }
-
 
 // Media query to target tablets
 @media only screen and (max-width: 768px) and (min-width: 468px) {
-  .products-container{
+  .products-container {
     width: 100%;
     margin: 20px auto;
   }
 
-  .categories-listing{
-     width: 30%;
+  .categories-listing {
+    width: 30%;
   }
 
-  .products-listing{
-       width: 70%;
+  .products-listing {
+    width: 70%;
   }
-  .product-item{
+  .product-item {
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
   }
 
-  .product-desc{
-    display: flex;
+  .product-desc {
+    flex-direction: row;
   }
 
-.desc{
-  width: 50%;
-  height: 200px;
-  overflow: hidden;
-  background-color: lightgray;
-}
+  .desc {
+    background-color: lightgray;
+    font-size: 12px;
+  }
 
-img{
-  width: 50%;
-  height: 200px;
-}
-.split-btn{
-  display: none;
-}
+  img {
+    width: 50%;
+  }
+  .buynow-desktop-btn {
+    display: none;
+  }
 
-.full-btn{
- display: block;
-}
+  .buynow-tablet-btn {
+    display: block;
+    margin: 5px 0px;
+  }
 }
 
 @media only screen and (max-width: 962px) and (min-width: 768px) {
-  .product-item{
+  .product-item {
     width: 33.3%;
     display: flex;
     flex-direction: column;

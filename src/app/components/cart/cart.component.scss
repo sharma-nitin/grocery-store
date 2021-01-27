@@ -3,12 +3,17 @@
   margin: 10px auto;
   font-size: 14px;
 }
-header p{
+
+h1{
   padding: 10px;
   box-shadow: 0 4px 6px 1px lightgray;
+  font-size: 20px;
+  small{
+    font-weight: normal;
+  }
 }
 
-header, .promotion{
+h1, .promotion{
   margin: 10px 0px;
 }
 
@@ -16,7 +21,7 @@ ul{
   list-style: none;
 }
 
-li{
+li a{
   display: flex;
   width: 100%;
   align-items: center;
@@ -24,6 +29,7 @@ li{
   box-shadow: 0 4px 6px -3px lightgray;
   margin:10px 0px
 }
+
 .itemprice{
   flex-grow: 1;
   text-align: end;
@@ -37,7 +43,6 @@ li{
 img{
   width: 60px;
 }
-
 
 .promotion{
     display: flex;
@@ -60,9 +65,10 @@ img{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-footer {
+.footer {
   position: fixed;
   bottom: 0;
   width: 80%;
@@ -104,7 +110,7 @@ footer {
 
 // Media query to target mobile phone and small screen mobiles
 @media only screen and (max-width: 468px) {
-  footer {
+  .footer {
     width: 100%;
   }
   .cart-container{
@@ -122,7 +128,7 @@ footer {
 
 // Media query to target tablets
 @media only screen and (max-width: 768px) and (min-width: 468px) {
-  footer {
+  .footer {
     width: 100%;
   }
   .cart-container{
