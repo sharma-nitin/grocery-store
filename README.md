@@ -1,12 +1,12 @@
 # Sabka-bazar case study
 
-# Starting Backend Development server
+## Starting Backend Development server
 
 1- Navigate to shopping-cart-server
 2- Run command npm run start
 3- It will start the server on port 5000.
 
-# Starting Frontend Development server
+## Starting Frontend Development server
 
 1- Navigate to root directory sabka-bazaar
 2- Run command ng serve
