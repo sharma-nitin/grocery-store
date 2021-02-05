@@ -1,0 +1,52 @@
+.category {
+  display: flex;
+  min-height: 180px;
+  box-shadow: 0 4px 6px -3px lightgray;
+  text-align: center;
+  align-items: center;
+}
+
+.category:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+article img {
+  width: 250px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.category-description {
+  flex-grow: 1;
+}
+
+button {
+  display: block;
+  padding: 7px;
+  background-color: #ba3d50;
+  border: none;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+// Media query to target mobile phone and small screen mobiles
+@media only screen and (max-width: 468px) {
+  p {
+    font-size: 10px;
+  }
+
+  article img {
+    width: 50%;
+  }
+}
+
+// Media query to target tablets
+@media only screen and (max-width: 768px) and (min-width: 468px) {
+  p {
+    font-size: 12px;
+  }
+}

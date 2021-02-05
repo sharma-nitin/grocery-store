@@ -61,12 +61,4 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  //addtoCart will trigger with item to be added in cart when Buy now is clicked.
-  addtoCart(item) {
-    this.productservice.addtoCart(item.id).subscribe((res: any) => {
-      if (res.response === 'Success') {
-        this.productservice.addedtocart(item);
-      }
-    });
-  }
 }

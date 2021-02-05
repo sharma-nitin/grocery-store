@@ -6,48 +6,7 @@
   </h1>
 
   <!--cart body with cart items -->
-  <section *ngIf="itemsInCart.length > 0">
-    <ul>
-      <li *ngFor="let item of itemsInCart">
-        <a>
-          <img [src]="item.imageURL" [alt]="item.name" />
-          <article>
-            <p class="product-name">{{ item.name }}</p>
-            <section>
-              <button
-                class="counter-button"
-                (click)="Productservice.removedfromcart(item)"
-                attr.aria-label="Remove 1 quantity out of {{item.quantity}} of {{item.name}}"
-              >
-                -
-              </button>
-              <span>{{ item.quantity }}</span>
-              <button
-                class="counter-button"
-                (click)="Productservice.addedtocart(item)"
-                attr.aria-label="Add 1 more {{item.name}}"
-              >
-                +
-              </button>
-              <span>x</span>
-              <span>{{ "Rs." + item.price }}</span>
-            </section>
-          </article>
-          <section class="itemprice">
-            <span>{{ "Rs." + item.price * item.quantity }}</span>
-          </section>
-        </a>
-      </li>
-    </ul>
-    <!-- promotional Banner below cart items -->
-    <aside class="promotion">
-      <img
-        src="../../../assets/images/lowest-price.png"
-        alt="Banner displaying, You wont find it cheaper anywhere"
-      />
-      <p>You wont find it cheaper anywhere</p>
-    </aside>
-  </section>
+  <app-cart-listing [itemsInCart]="itemsInCart"></app-cart-listing>
 
   <!-- Body of cart without cart items -->
   <section class="emptycart" *ngIf="itemsInCart.length === 0">

@@ -1,34 +1,7 @@
 <div class="home-container">
   <!-- Carousel -->
-  <section class="carousel" aria-label="caroussel slider with images">
-    <div class="slideshow-container">
-      <div class="mySlides fade" *ngFor="let item of bannersData">
-        <img [src]="item.bannerImageUrl" [alt]="item.bannerImageAlt" />
-      </div>
-      <a class="prev" (click)="changeSlide(-1)" aria-label="previous banner">prev</a>
-      <a class="next" (click)="changeSlide(1)" aria-label="next banner">next</a>
-    </div>
-    <aside style="text-align: center">
-      <span
-        *ngFor="let item of bannersData; let i = index"
-        class="dot"
-        (click)="slideatDot(i + 1)"
-        attr.aria-label="slide to carousel image {{i+1}}"
-      ></span>
-    </aside>
-  </section>
+  <app-carousel [bannersData]="bannersData"></app-carousel>
 
   <!-- Categories Listing -->
-  <ng-container *ngFor="let item of Categories">
-    <article class="category" *ngIf="item.enabled">
-      <img [src]="item.imageUrl" [alt]="item.key" />
-      <div class="category-description">
-        <h4>{{ item.name }}</h4>
-        <p>{{ item.description }}</p>
-        <button [routerLink]="['/products', item.key]" attr.aria-label="Explore products from category {{item.name}}">
-          {{ "Explore " + item.name }}
-        </button>
-      </div>
-    </article>
-  </ng-container>
+  <app-categories [Categories]="Categories"></app-categories>
 </div>

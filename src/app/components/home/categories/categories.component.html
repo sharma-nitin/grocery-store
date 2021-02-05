@@ -1,0 +1,12 @@
+<ng-container *ngFor="let item of Categories">
+  <article class="category" *ngIf="item.enabled">
+    <img [src]="item.imageUrl" [alt]="item.key" />
+    <div class="category-description">
+      <h4>{{ item.name }}</h4>
+      <p>{{ item.description }}</p>
+      <button [routerLink]="['/products', item.key]" attr.aria-label="Explore products from category {{item.name}}">
+        {{ "Explore " + item.name }}
+      </button>
+    </div>
+  </article>
+</ng-container>

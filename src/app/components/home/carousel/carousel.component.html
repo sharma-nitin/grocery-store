@@ -1,0 +1,17 @@
+<section class="carousel" aria-label="caroussel slider with images">
+  <div class="slideshow-container">
+    <div class="mySlides fade" *ngFor="let item of bannersData">
+      <img [src]="item.bannerImageUrl" [alt]="item.bannerImageAlt" />
+    </div>
+    <a class="prev" (click)="changeSlide(-1)" aria-label="previous banner">prev</a>
+    <a class="next" (click)="changeSlide(1)" aria-label="next banner">next</a>
+  </div>
+  <aside style="text-align: center">
+    <span
+      *ngFor="let item of bannersData; let i = index"
+      class="dot"
+      (click)="slideatDot(i + 1)"
+      attr.aria-label="slide to carousel image {{i+1}}"
+    ></span>
+  </aside>
+</section>

@@ -38,44 +38,8 @@
   </section>
 
   <!-- products listing / grid view of products -->
-  <section class="products-listing">
-    <article
-      class="product-item"
-      *ngFor="let item of products | sortByCategory: selectedCategoryId"
-    >
-      <h2 class="item-name">{{ item.name }}</h2>
-      <div class="product-desc">
-        <img [src]="item.imageURL" [alt]="item.name" />
-        <section>
-          <p class="desc">{{ item.description }}</p>
-          <button
-          class="buynow-mobile-btn"
-          (click)="addtoCart(item)"
-          attr.aria-label="Buy item {{ item.name }} at {{ item.price }} Rupee"
-        >
-          {{ "Buy Now @ Rs." + item.price }}
-        </button>
-        </section>
-      </div>
-      <div class="buynow-desktop-btn">
-        <p>{{ "MRP RS." + item.price }}</p>
-        <button
-          (click)="addtoCart(item)"
-          attr.aria-label="Buy item {{ item.name }} at {{ item.price }} Rupee"
-        >
-          Buy Now
-        </button>
-      </div>
-
-      <button
-        class="buynow-tablet-btn"
-        (click)="addtoCart(item)"
-        attr.aria-label="Buy item {{ item.name }} at {{ item.price }} Rupee"
-      >
-        {{ "Buy Now @ Rs." + item.price }}
-      </button>
-
-    </article>
-  </section>
-
+  <app-products-listing class="product-list"
+    [products]="products"
+    [selectedCategoryId]="selectedCategoryId"
+  ></app-products-listing>
 </div>

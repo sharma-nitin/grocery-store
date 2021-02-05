@@ -14,6 +14,10 @@ import { SortByCategoryPipe } from './pipes/sort-by-category.pipe';
 import { FormsModule } from '@angular/forms';
 import { MustMatchDirective } from './directives/must-match.directive';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CartListingComponent } from './components/cart/cart-listing/cart-listing.component';
+import { CarouselComponent } from './components/home/carousel/carousel.component';
+import { CategoriesComponent } from './components/home/categories/categories.component';
+import { ProductsListingComponent } from './components/products/products-listing/products-listing.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     SignupComponent,
     SortByCategoryPipe,
-    MustMatchDirective
+    MustMatchDirective,
+    CartListingComponent,
+    CarouselComponent,
+    CategoriesComponent,
+    ProductsListingComponent
   ],
   imports: [
     BrowserModule,
