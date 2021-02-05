@@ -76,6 +76,16 @@
   to {opacity: 1}
 }
 
+
+// Media query to target tablets
+@media only screen and (max-width: 768px) {
+  .mySlides {
+    img {
+      height: 120px;
+    }
+  }
+}
+
 // Media query to target mobile phone and small screen mobiles
 @media only screen and (max-width: 468px) {
 
@@ -85,13 +95,4 @@
     }
   }
 
-}
-
-// Media query to target tablets
-@media only screen and (max-width: 768px) and (min-width: 468px) {
-  .mySlides {
-    img {
-      height: 120px;
-    }
-  }
 }

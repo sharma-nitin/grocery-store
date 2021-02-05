@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 .nav-container {
   height: 80px;
@@ -28,10 +28,10 @@
   }
 }
 
-.active{
+.active {
   color: $primary-bg-color;
 }
-picture{
+picture {
   outline: none;
   cursor: pointer;
 }
@@ -79,11 +79,12 @@ ul {
   cursor: pointer;
 }
 
-.hamburger, #hamburger-links {
+.hamburger,
+#hamburger-links {
   display: none;
 }
 
-.hamburger{
+.hamburger {
   background: none;
   border: none;
   outline: none;
@@ -94,7 +95,7 @@ ul {
   color: $primary-bg-color;
   font-size: 14px;
   font-weight: 600;
-  li{
+  li {
     text-align: center;
     padding: 5px;
   }
@@ -112,26 +113,41 @@ ul {
   transition: all 0.75s ease;
 }
 
+// Media query to target tablets
+@media only screen and (max-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
+
+  .menu-items {
+    flex: 1 0 auto;
+    li:first-child {
+      padding: 0px 0px 20px 50px;
+    }
+    li {
+      padding: 0px 0px 20px 20px;
+    }
+  }
+}
 
 // Media query to target mobile phone and small screen mobiles
 @media only screen and (max-width: 468px) {
+  .nav-right {
+    display: flex;
+    flex-direction: row;
+    width: 140px;
+    font-size: 14px;
+    font-weight: 600;
+    color: gray;
+  }
 
-.nav-right {
-  display: flex;
-  flex-direction: row;
-  width: 140px;
-  font-size: 14px;
-  font-weight: 600;
-  color: gray;
-}
+  .hamburger {
+    display: block;
+  }
 
-.hamburger{
-  display: block;
-}
-
-.sign-up {
-  display: none;
-}
+  .sign-up {
+    display: none;
+  }
 
   .navbar {
     width: 100%;
@@ -154,24 +170,5 @@ ul {
   picture img {
     height: 30px;
     margin: 5px;
-  }
-
-
-}
-
-// Media query to target tablets
-@media only screen and (max-width: 768px) and (min-width: 468px) {
-  .navbar {
-    width: 100%;
-  }
-
-  .menu-items {
-    flex: 1 0 auto;
-    li:first-child {
-      padding: 0px 0px 20px 50px;
-    }
-    li {
-      padding: 0px 0px 20px 20px;
-    }
   }
 }

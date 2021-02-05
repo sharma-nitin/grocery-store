@@ -35,6 +35,13 @@ button {
   cursor: pointer;
 }
 
+// Media query to target tablets
+@media only screen and (max-width: 768px) {
+  p {
+    font-size: 12px;
+  }
+}
+
 // Media query to target mobile phone and small screen mobiles
 @media only screen and (max-width: 468px) {
   p {
@@ -46,9 +53,3 @@ button {
   }
 }
 
-// Media query to target tablets
-@media only screen and (max-width: 768px) and (min-width: 468px) {
-  p {
-    font-size: 12px;
-  }
-}
