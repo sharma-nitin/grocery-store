@@ -1,9 +1,5 @@
 @import "variables";
 
-.promotion {
-  margin: 10px 0px;
-}
-
 ul {
   list-style: none;
 }
@@ -13,14 +9,14 @@ li a {
   width: 100%;
   align-items: center;
   height: 75px;
-  box-shadow: 0 4px 6px -3px $primary-shadow-color;
-  margin: 10px 0px;
+  box-shadow: 0 .4rem .6rem -.3rem $primary-shadow-color;
+  margin: 1rem 0rem;
 }
 
 .itemprice {
   flex-grow: 1;
   text-align: end;
-  padding: 15px;
+  padding: 1.5rem;
 }
 
 .product-name {
@@ -34,24 +30,25 @@ img {
 .promotion {
   display: flex;
   align-items: center;
-  padding-left: 20px;
-  font-size: 14px;
-  box-shadow: 0 4px 6px 1px $primary-shadow-color;
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  box-shadow: 0 .4rem .6rem .1rem $primary-shadow-color;
+  margin: 1rem 0rem;
   img {
-    width: 90px;
+    width: 9rem;
   }
   p {
-    padding-left: 10px;
-    font-size: 14px;
+    padding-left: 1rem;
+    font-size: 1.4rem;
   }
 }
 
 .counter-button {
-  padding: 0px 5px;
+  padding: 0rem .5rem;
   background-color: $primary-bg-color;
   border: none;
   color: white;
-  margin: 5px 10px;
+  margin: .5rem 1rem;
   cursor: pointer;
 }
 
@@ -61,9 +58,4 @@ img {
 
 // Media query to target mobile phone and small screen mobiles
 @media only screen and (max-width: 468px) {
-  .promotion {
-    p {
-      font-size: 10px;
-    }
-  }
 }

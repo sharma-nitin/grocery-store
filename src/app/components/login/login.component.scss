@@ -2,14 +2,15 @@
 
 .login-container {
   width: 70%;
-  min-height: 150px;
-  margin: 20px auto;
+  min-height: 15rem;
+  margin: 2rem auto;
   display: flex;
-  grid-gap: 30px;
+  grid-gap: 3rem;
 }
 .login-item{
   width: 40%;
-  margin-top: 20px;
+  margin-top: 2rem;
+  font-size: 1.4rem;
 }
 
 .login-form {
@@ -19,55 +20,55 @@ width: 60%;
 section {
   h3 {
     font-weight: 700;
-    font-size: 30px;
+    font-size: 3rem;
   }
   p {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
 
 .email,.password {
   display: block;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   color: gray;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 input{
   width: 60%;
   border: none;
   outline: none;
-  border-bottom: 2px solid $primary-shadow-color;
+  border-bottom: .2rem solid $primary-shadow-color;
 }
 
 
 button[type="submit"] {
   display: block;
   width: 60%;
-  padding: 7px;
+  padding: .7rem;
   background-color: $primary-bg-color;
   border: none;
   color: white;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 
 .invalid-feedback{
-  font-size: 12px;
+  font-size: 1.2rem;
   color: red;
 }
 
 .is-invalid{
-  border-bottom: 1px solid red;
+  border-bottom: .1rem solid red;
 }
 
 // Media query to target mobile phone and small screen mobiles
 @media only screen and (max-width: 468px) {
   .login-container {
     width: 100%;
-    min-height: 200px;
+    min-height: 20rem;
     margin: auto;
     display: block;
   }
@@ -75,7 +76,8 @@ button[type="submit"] {
   .login-item{
     width: 100%;
     text-align: center;
-    padding: 20px;
+    padding: 2rem;
+    font-size: 2rem;
   }
 
   .login-form {
@@ -91,7 +93,7 @@ button[type="submit"] {
 button[type="submit"] {
   display: block;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 }
 

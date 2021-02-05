@@ -1,17 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Dosis';
+  font-family: "Dosis";
 }
+
+html {
+  font-size: 10px;
+}
+
+// Media query to target tablets
+@media only screen and (max-width: 768px){
+  html {
+    font-size: 8px;
+  }
+}
+
+// Media query to target mobile phone and small screen mobiles
+@media only screen and (max-width: 468px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
-

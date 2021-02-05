@@ -1,12 +1,12 @@
 @import "variables";
 
 .nav-container {
-  height: 80px;
-  box-shadow: 0 4px 6px -3px $primary-shadow-color;
+  min-height: 4rem;
+  box-shadow: 0 .4rem .6rem -.3rem $primary-shadow-color;
 }
 
 .navbar {
-  height: 80px;
+  height: 8rem;
   width: 80%;
   display: flex;
   margin: auto;
@@ -14,16 +14,16 @@
 
 .menu-items {
   flex: 1 0 auto;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   color: gray;
   cursor: pointer;
   li:first-child {
-    padding: 0px 0px 20px 100px;
+    padding: 0px 0px 2rem 10rem;
     outline: none;
   }
   li {
-    padding: 0px 0px 20px 20px;
+    padding: 0rem 0rem 2rem 2rem;
     outline: none;
   }
 }
@@ -37,22 +37,24 @@ picture {
 }
 
 picture img {
-  height: 60px;
-  margin: 10px 0px;
+  height: 6rem;
+  margin: 1rem 0rem;
 }
 
 button img {
-  height: 20px;
+  height: 2rem;
 }
 
 section span {
-  padding-left: 10px;
+  padding-left: 1rem;
 }
 
 .cart {
   display: flex;
   justify-content: center;
-  padding: 6px;
+  align-items: center;
+  padding: .6rem;
+  font-size: 1.4rem;
   border-style: none;
   cursor: pointer;
   outline: none;
@@ -68,8 +70,8 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 140px;
-  font-size: 14px;
+  width: 14rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: gray;
 }
@@ -93,11 +95,11 @@ ul {
 #hamburger-links {
   background: whitesmoke;
   color: $primary-bg-color;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   li {
     text-align: center;
-    padding: 5px;
+    padding: .5rem;
   }
 }
 
@@ -122,10 +124,10 @@ ul {
   .menu-items {
     flex: 1 0 auto;
     li:first-child {
-      padding: 0px 0px 20px 50px;
+      padding: 0px 0px 2rem 5rem;
     }
     li {
-      padding: 0px 0px 20px 20px;
+      padding: 0px 0px 2rem 2rem;
     }
   }
 }
@@ -135,8 +137,8 @@ ul {
   .nav-right {
     display: flex;
     flex-direction: row;
-    width: 140px;
-    font-size: 14px;
+    width: 14rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: gray;
   }
@@ -150,12 +152,11 @@ ul {
   }
 
   .navbar {
-    width: 100%;
     justify-content: space-between;
   }
   picture img {
-    height: 60px;
-    margin: 10px 5px;
+    height: 6rem;
+    margin: 1rem .5rem;
   }
 
   .menu-items {
@@ -164,11 +165,11 @@ ul {
 
   .navbar,
   .nav-container {
-    height: 40px;
+    height: 4rem;
   }
 
   picture img {
-    height: 30px;
-    margin: 5px;
+    height: 3rem;
+    margin: .5rem;
   }
 }
