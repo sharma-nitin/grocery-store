@@ -7,8 +7,7 @@
           *ngIf="item.enabled"
           (click)="categorySelection(item)"
           [ngClass]="{ active: item.id === selectedCategoryId }"
-        >
-          <a>{{ item.name }}</a>
+        >{{ item.name }}
         </li>
       </ng-container>
     </ul>

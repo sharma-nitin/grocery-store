@@ -1,16 +1,16 @@
   <section class="nav-container">
+    <picture class="nav-logo" routerLink="/home">
+      <source
+        media="(max-width:468px)"
+        srcset="./../../../assets/images/logo.png"
+      />
+      <img
+        src="./../../../assets/images/logo_2x.png"
+        alt="sabka bazaar logo image"
+      />
+    </picture>
+    
     <nav class="navbar">
-      <picture class="nav-logo" routerLink="/home">
-        <source
-          media="(max-width:468px)"
-          srcset="./../../../assets/images/logo.png"
-        />
-        <img
-          src="./../../../assets/images/logo_2x.png"
-          alt="sabka bazaar logo image"
-        />
-      </picture>
-
       <ul class="menu-items">
         <li routerLink="home" routerLinkActive="active" title="Homepage">Home</li>
         <li routerLink="products" routerLinkActive="active" title="products">
