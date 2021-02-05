@@ -80,17 +80,11 @@
 @media only screen and (max-width: 768px) {
   .mySlides {
     img {
-      height: 12rem;
+      height: 15rem;
     }
   }
 }
 
 // Media query to target mobile phone and small screen mobiles
 @media only screen and (max-width: 468px) {
-  .mySlides {
-    img {
-      height: 15rem;
-    }
-  }
-
 }
