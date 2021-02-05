@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
+              "src/themes/styles.scss",
               "node_modules/font-awesome/css/font-awesome.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/themes"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

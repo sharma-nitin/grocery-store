@@ -1,3 +1,5 @@
+@import 'variables';
+
 .cart-container{
   width: 80%;
   margin: 10px auto;
@@ -6,7 +8,7 @@
 
 h1{
   padding: 10px;
-  box-shadow: 0 4px 6px 1px lightgray;
+  box-shadow: 0 4px 6px 1px $primary-shadow-color;
   font-size: 20px;
   small{
     font-weight: normal;
@@ -32,7 +34,7 @@ h1{
   bottom: 0;
   width: 80%;
   background-color: white;
-  box-shadow: 0 4px 6px 1px lightgray;
+  box-shadow: 0 4px 6px 1px $primary-shadow-color;
   h5 {
     text-align: center;
     color: gray;
@@ -44,7 +46,7 @@ h1{
   width: 100%;
   display: block;
   padding: 7px;
-  background-color: #ba3d50;
+  background-color: $primary-bg-color;
   border: none;
   color: white;
   margin: 10px auto;

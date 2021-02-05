@@ -1,7 +1,9 @@
+@import 'variables';
+
 .category {
   display: flex;
   min-height: 180px;
-  box-shadow: 0 4px 6px -3px lightgray;
+  box-shadow: 0 4px 6px -3px $primary-shadow-color;
   text-align: center;
   align-items: center;
 }
@@ -26,7 +28,7 @@ p {
 button {
   display: block;
   padding: 7px;
-  background-color: #ba3d50;
+  background-color: $primary-bg-color;
   border: none;
   color: white;
   margin: 10px auto;

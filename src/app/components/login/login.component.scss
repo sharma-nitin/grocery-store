@@ -1,3 +1,5 @@
+@import "variables";
+
 .login-container {
   width: 70%;
   min-height: 150px;
@@ -37,7 +39,7 @@ input{
   width: 60%;
   border: none;
   outline: none;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid $primary-shadow-color;
 }
 
 
@@ -45,7 +47,7 @@ button[type="submit"] {
   display: block;
   width: 60%;
   padding: 7px;
-  background-color: #ba3d50;
+  background-color: $primary-bg-color;
   border: none;
   color: white;
   cursor: pointer;

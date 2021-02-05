@@ -1,3 +1,5 @@
+@import 'variables';
+
 .products-listing {
   display: flex;
   flex-wrap: wrap;
@@ -25,7 +27,7 @@ p {
 }
 
 .desc {
-  background-color: lightgray;
+  background-color: $primary-shadow-color;
   padding: 10px;
   flex-grow: 1;
 }
@@ -47,7 +49,7 @@ img {
 button {
   display: block;
   padding: 4px;
-  background-color: #ba3d50;
+  background-color: $primary-bg-color;
   border: none;
   color: white;
   width: 40%;
@@ -99,7 +101,7 @@ button {
   }
 
   .desc {
-    background-color: lightgray;
+    background-color: $primary-shadow-color;
     flex-grow: 0;
   }
 
@@ -121,7 +123,7 @@ button {
   }
 
   .desc {
-    background-color: lightgray;
+    background-color: $primary-shadow-color;
     font-size: 12px;
   }
 

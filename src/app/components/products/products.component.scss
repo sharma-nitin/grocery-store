@@ -1,3 +1,5 @@
+@import 'variables';
+
 .products-container {
   width: 80%;
   margin: 20px auto;
@@ -6,7 +8,7 @@
 
 .categories-listing {
   flex-basis: 25%;
-  background-color: lightgray;
+  background-color: $primary-shadow-color;
   ul {
     list-style: none;
     li {
@@ -30,7 +32,7 @@
   width: 100%;
   padding: 8px 0px;
   border: none;
-  background-color: #ba3d50;
+  background-color: $primary-bg-color;
   color: white;
 }
 
@@ -41,7 +43,7 @@ option {
 }
 
 .active {
-  background-color: #ba3d50;
+  background-color: $primary-bg-color;
   color: white;
 }
 
