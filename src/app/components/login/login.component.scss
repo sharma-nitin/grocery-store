@@ -57,11 +57,11 @@ button[type="submit"] {
 
 .invalid-feedback{
   font-size: 1.2rem;
-  color: red;
+  color: $primary-error-color;
 }
 
 .is-invalid{
-  border-bottom: .1rem solid red;
+  border-bottom: .1rem solid $primary-error-color;
 }
 
 // Media query to target mobile phone and small screen mobiles
